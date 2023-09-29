@@ -1,8 +1,55 @@
 import React, { useState } from "react";
+import HomePage from "./HomePage";
+
+function NavBar({ setActivePage }) {
+  const buttonStyle = {
+    border: "none",
+    background: "none",
+    fontSize: "24px",
+    margin: "0 10px",
+    cursor: "pointer",
+    color: "white",
+    padding: "10px",
+    fontWeight: "bold",
+  };
+
+  const serviceStyle = {
+    border: "none",
+    background: "none",
+    fontSize: "24px",
+    margin: "0 10px",
+    cursor: "pointer",
+    color: "white",
+    padding: "10px",
+    fontWeight: "bold",
+  };
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "flex-end",
+        width: "100%",
+        height: "8%",
+        background: "none",
+      }}
+    >
+      <button style={buttonStyle} onClick={() => setActivePage("home")}>
+        {" "}
+        Home{" "}
+      </button>{" "}
+      <button style={serviceStyle} onClick={() => setActivePage("service")}>
+        {" "}
+        Service{" "}
+      </button>{" "}
+    </div>
+  );
+}
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [prediction, setPrediction] = useState("");
+  const [activePage, setActivePage] = useState("home");
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -26,25 +73,22 @@ function App() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "flex-start", // Adjusted to align content at the top
-        height: "100vh", // This will make the container take the full height of the viewport
-      }}
-    >
-      <div class="topnav">
-        <a class="active" href="#home">
-          Home{" "}
-        </a>{" "}
-        <a href="#news"> News </a>{" "}
-      </div>{" "}
-      <h1> Herb Identification </h1>{" "}
-      <input type="file" accept="image/*" onChange={handleFileUpload} />{" "}
-      <button onClick={handleSubmit}> Submit </button>{" "}
-      {prediction && <p> Prediction: {prediction} </p>}{" "}
+    <div>
+      <NavBar setActivePage={setActivePage} />{" "}
+      {activePage === "home" && (
+        <p>
+          {" "}
+          <HomePage />{" "}
+        </p>
+      )}{" "}
+      {activePage === "service" && (
+        <div>
+          <h1> Herb Identification </h1>{" "}
+          <input type="file" accept="image/*" onChange={handleFileUpload} />{" "}
+          <button onClick={handleSubmit}> Submit </button>{" "}
+          {prediction && <p> Prediction: {prediction} </p>}{" "}
+        </div>
+      )}{" "}
     </div>
   );
 }
