@@ -3,9 +3,19 @@ from fastapi.responses import FileResponse
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
+from fastapi.middleware.cors import CORSMiddleware
 from tensorflow.keras.applications.resnet_v2 import preprocess_input 
 # Instantiate app FastAPI App
 app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Add your React app's URL here
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 hash_table = {
   0: "Chaplu",
@@ -20,11 +30,11 @@ hash_table = {
   9: "Yanang",
 }
 
-# Root route
-@app.get("/")
-def root():
-  html_file_path = 'index.html'
-  return  FileResponse(html_file_path, media_type='text/html')
+# # Root route
+# @app.get("/")
+# def root():
+#   html_file_path = 'index.html'
+#   return  FileResponse(html_file_path, media_type='text/html')
 
 # Predicting the image from users
 @app.post("/image")
