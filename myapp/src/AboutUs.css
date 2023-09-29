@@ -1,0 +1,188 @@
+/* Google Font Import - Poppins */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Reset and global styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.4s ease;
+}
+
+body {
+  height: 100vh;
+  background-color: #e4e9f7;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+/* About Section */
+
+.about {
+  padding: 100px 0 20px 0;
+  text-align: center;
+}
+
+.about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4070f7;
+}
+
+.about p {
+  font-size: 1rem;
+  color: #323030;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-info {
+  margin: 2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.about-img {
+  width: 20rem;
+  height: 20rem;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.about-info p {
+  font-size: 1.3rem;
+  margin: 0 2rem;
+  text-align: justify;
+}
+
+button {
+  border: none;
+  outline: 0;
+  padding: 10px;
+  margin: 2rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #40b736;
+  text-align: center;
+  cursor: pointer;
+  width: 15rem;
+  border-radius: 4px;
+}
+
+/* Team Section */
+
+.team {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.team h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4070f7;
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 18rem;
+  height: 25rem;
+  margin-top: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(64, 112, 247, 0.9);
+  /* Increase the spread radius to make it more visible */
+}
+
+.card-img {
+  width: 18rem;
+  height: 14rem;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-name {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #4070f7;
+  /* Change font color to #4070F7 */
+}
+
+.card-id {
+  font-size: 1rem;
+  color: #555;
+}
+
+.card-role {
+  font-size: 1rem;
+  color: #888;
+  margin: 5px 0;
+}
+
+/* Styles for footer */
+
+.footer {
+  background-color: #4070f4;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .about h1 {
+    font-size: 2rem;
+  }
+  .about p {
+    font-size: 0.9rem;
+  }
+  .about-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-img {
+    width: 60%;
+    height: 60%;
+    margin-bottom: 1rem;
+  }
+  .about-info p {
+    margin: 1rem 2rem;
+  }
+  .about-info button {
+    margin: 1rem 2rem;
+    width: 10rem;
+  }
+  .team {
+    margin: 0 1rem;
+  }
+}
