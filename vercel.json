@@ -1,20 +1,11 @@
 {
-  "version": 1,
+  "version": 2,
   "builds": [ {
-      "src": "/backend/(.*)",
-      "use": "@vercel/python"
-    }, {
-      "src": "/frontend/build",
+      "src": "./myapp/",
       "use": "@vercel/static"
     } ],
   "routes": [ {
-      "src": "//Users/gem/Documents/HErbAi/myapp/(.*)",
-      "dest": "backend/"
-    }, {
       "src": "/(.*)",
-      "dest": "frontend/build/"
-    } ],
-  "env": {
-    "VAR_NAME": "VALUE"
-  }
+      "dest": "./myapp/$1"
+    } ]
 }

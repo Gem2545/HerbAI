@@ -31,11 +31,8 @@ hash_table = {
     9: "Yanang",
 }
 
-# # Root route
-# @app.get("/")
-# def root():
-#   html_file_path = 'index.html'
-#   return  FileResponse(html_file_path, media_type='text/html')
+# Load the pre-trained model
+model = tf.keras.models.load_model("ResNet152V2.h5")
 
 
 # Predicting the image from users
@@ -45,8 +42,6 @@ def predict_img(image: UploadFile):
     with open(f"uploaded_{image.filename}", "wb") as f:
         f.write(image.file.read())
 
-    # Load the pre-trained model
-    model = tf.keras.models.load_model("ResNet152V2.h5")
     img = load_img(f"uploaded_{image.filename}", target_size=(256, 256))
     img = img_to_array(img)
     img = np.expand_dims(img, axis=0)
