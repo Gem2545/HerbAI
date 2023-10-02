@@ -12,7 +12,7 @@ app = FastAPI()
 origins = [
     "https://localhost",
     "https://localhost:3000",
-    "https://herb-1w3s8u3lu-gem2545s-projects.vercel.app",
+    "https://herb-d62hjlt52-gem2545s-projects.vercel.app",
 ]
 
 # Add CORS middleware
