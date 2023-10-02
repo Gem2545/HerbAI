@@ -68,3 +68,7 @@ def predict_img(image: UploadFile):
         result_list = result_list
         print(f"Predicted Label: {label}")
         return label, result_list, result_list_converted
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port = 8080)
