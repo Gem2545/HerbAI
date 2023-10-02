@@ -23,7 +23,7 @@ function ServicePage() {
     const formData = new FormData();
     formData.append("image", selectedFile);
     try {
-      const response = await fetch("http://localhost:8000/image", {
+      const response = await fetch("https://localhost:8000/image", {
         method: "POST",
         body: formData,
       });

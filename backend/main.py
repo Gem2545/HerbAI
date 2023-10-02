@@ -9,10 +9,15 @@ from tensorflow.keras.applications.resnet_v2 import preprocess_input
 # Instantiate app FastAPI App
 app = FastAPI()
 
+origins = [
+    "https://localhost",
+    "https://localhost:3000",
+]
+
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Add your React app's URL here
+    allow_origins=origins,  # Add your React app's URL here
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
