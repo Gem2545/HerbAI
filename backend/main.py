@@ -12,6 +12,7 @@ app = FastAPI()
 origins = [
     "https://localhost",
     "https://localhost:3000",
+    "https://herb-1w3s8u3lu-gem2545s-projects.vercel.app",
 ]
 
 # Add CORS middleware
@@ -69,6 +70,8 @@ def predict_img(image: UploadFile):
         print(f"Predicted Label: {label}")
         return label, result_list, result_list_converted
 
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port = 8080)
+
+    uvicorn.run(app, host="0.0.0.0", port=8080)
