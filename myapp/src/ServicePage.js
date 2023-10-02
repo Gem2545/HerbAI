@@ -23,10 +23,13 @@ function ServicePage() {
     const formData = new FormData();
     formData.append("image", selectedFile);
     try {
-      const response = await fetch("https://localhost:8000/image", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        " https://herbprediction-abwy4fgmma-as.a.run.app",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       const data = await response.json();
       setPrediction(data[0]);
     } catch (error) {
