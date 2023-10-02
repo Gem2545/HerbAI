@@ -24,7 +24,7 @@ function ServicePage() {
     formData.append("image", selectedFile);
     try {
       const response = await fetch(
-        " https://herbprediction-abwy4fgmma-as.a.run.app",
+        " https://herbprediction-abwy4fgmma-as.a.run.app/image",
         {
           method: "POST",
           body: formData,
